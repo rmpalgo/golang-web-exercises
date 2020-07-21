@@ -1,6 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+	"strings"
+)
+
+func SortString(w string) string {
+	s := strings.Split(w, "")
+	sort.Strings(s)
+	return strings.Join(s, "")
+}
 
 func main() {
 	//0 create variable doingGoRightNow
@@ -50,5 +60,27 @@ func main() {
 	}
 
 	fmt.Println(someNumbers)
+
+	// Exercise 8
+	// Sort the vegetables in alphabetical order.
+	sort.Strings(vegetables)
+
+	fmt.Println(vegetables)
+
+	// Exercise 9
+	// Write the code necessary to sort the fruits in reverse alphabetical order
+
+	sort.Strings(fruitSlice)
+	fmt.Println(fruitSlice)
+	for i, j :=0, len(fruitSlice)-1; i < j; i, j = i+1, j-1 {
+		fruitSlice[i], fruitSlice[j] = fruitSlice[j], fruitSlice[i]
+	}
+	fmt.Println(fruitSlice)
+
+	// Exercise 10
+	// Write the code necessary to produce a single array that holds all fruits then all vegetables in the order as they were sorted above.
+	// Assign the result to a variable named fruitsAndVeggies.
+	var fruitsAndVeggies = append(fruitSlice, vegetables...)
+	fmt.Println(fruitsAndVeggies)
 
 }

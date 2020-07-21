@@ -36,4 +36,19 @@ func main() {
 	fruitSlice = append(fruitSlice, "tomato")
 	fmt.Println(fruitSlice)
 
+	// Exercise 6
+	// add the string "tomato" onto the end of the vegetables array.
+	vegetables = append(vegetables, "tomato")
+	fmt.Println(vegetables)
+
+	// Exercise 7
+	// Given the array of numbers defined below, reverse the array of numbers that you created above.
+	var someNumbers = []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+	for i, j :=0, len(someNumbers)-1; i < j; i, j = i+1, j-1 {
+		someNumbers[i], someNumbers[j] = someNumbers[j], someNumbers[i]
+	}
+
+	fmt.Println(someNumbers)
+
 }

@@ -87,6 +87,38 @@ func main() {
 	// Exercise 11
 	// Write a function definition for a function named addOne that takes in a number and returns that number plus one
 	fmt.Println(addOne(3))
+
+	// Exercise 12
+	// Write a function definition named isPositive that takes in a number and returns true or false if that number is positive.
+	fmt.Println(isPostive(-1))
+
+	// Exercise 13
+	// Write a function definition named isNegative that takes in a number and returns true or False if that number is negative.
+	fmt.Println(isNegative(-1))
+
+	// Exercise 14
+	// Write a function definition named isOdd that takes in a number and returns true or false if that number is odd.
+	fmt.Println(isOdd(3))
+
+	// Exercise 15
+	// Write a function definition named isEven that takes in a number and returns true or false if that number is even.
+	fmt.Println(isEven(1))
+}
+
+func isEven(num int) bool {
+	return num % 2 == 0
+}
+
+func isOdd(num int) bool {
+	return num % 2 != 0
+}
+
+func isNegative(num int) bool {
+	return num < 0
+}
+
+func isPostive(num int) bool {
+	return num > 0
 }
 
 func addOne(num int) int {

@@ -12,6 +12,7 @@ func SortString(w string) string {
 	return strings.Join(s, "")
 }
 
+
 func main() {
 	//0 create variable doingGoRightNow
 	var doingGoRightNow bool = true
@@ -83,4 +84,11 @@ func main() {
 	var fruitsAndVeggies = append(fruitSlice, vegetables...)
 	fmt.Println(fruitsAndVeggies)
 
+	// Exercise 11
+	// Write a function definition for a function named addOne that takes in a number and returns that number plus one
+	fmt.Println(addOne(3))
+}
+
+func addOne(num int) int {
+	return num + 1
 }

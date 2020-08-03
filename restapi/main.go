@@ -1,20 +1,48 @@
 package main
 
-import(
-	"encoding/json"
+import (
+	"github.com/gorilla/mux"
 	"log"
 	"net/http"
-	"math/rand"
-	"strconv"
-	"github.com/gorilla/mux"
-	)
+)
 
-// Post Structs (Model)
+// Post Structs
 type Post struct {
 	ID 			string 	`json:"id"`
 	Title 		string 	`json:"title"`
 	Body 		string 	`json:"body"`
 	User 		*User 	`json:"user"`
+}
+
+// User Struct
+type User struct {
+	Firstname 	string 	`json:"firstname"`
+	Lastname 	string 	`json:"lastname"`
+}
+
+// Get All Posts
+func getPosts(w http.ResponseWriter, r *http.Request) {
+
+}
+
+// Get Single Post
+func getPost(w http.ResponseWriter, r *http.Request) {
+
+}
+
+// Create a New Post
+func createPost(w http.ResponseWriter, r *http.Request) {
+
+}
+
+// Update Book
+func updatePost(w http.ResponseWriter, r *http.Request) {
+
+}
+
+// Delete Book
+func deletePost(w http.ResponseWriter, r *http.Request) {
+
 }
 
 func main() {

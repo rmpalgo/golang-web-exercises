@@ -4,7 +4,9 @@ import (
 	"encoding/json"
 	"github.com/gorilla/mux"
 	"log"
+	"math/rand"
 	"net/http"
+	"strconv"
 )
 
 // Init Posts var as a slice Post struct
@@ -47,6 +49,14 @@ func getPost(w http.ResponseWriter, r *http.Request) {
 
 // Create a New Post
 func createPost(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	var post Post
+	_ = json.NewDecoder(r.Body).Decode(&post)
+	post.ID = strconv.Itoa(rand.Intn(1000000)) // mock id
+	posts = append(posts, post)
+	json.NewEncoder(w).Encode(post)
+
+
 
 }
 

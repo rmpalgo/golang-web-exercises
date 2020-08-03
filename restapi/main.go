@@ -6,6 +6,9 @@ import (
 	"net/http"
 )
 
+// Init Posts var as a slice Post struct
+var posts []Post
+
 // Post Structs
 type Post struct {
 	ID 			string 	`json:"id"`
@@ -48,6 +51,10 @@ func deletePost(w http.ResponseWriter, r *http.Request) {
 func main() {
 	// Init Router
 	router := mux.NewRouter()
+
+	// Mock Posts
+	posts = append(posts, Post{ID: "1", Title: "Post One", User: &User{Firstname: "Ron", Lastname: "Pal"}})
+	posts = append(posts, Post{ID: "2", Title: "Post Two", User: &User{Firstname: "Milo", Lastname: "Puppy"}})
 
 	// Route Handlers / Endpoints
 	router.HandleFunc("/api/posts", getPosts).Methods("GET")

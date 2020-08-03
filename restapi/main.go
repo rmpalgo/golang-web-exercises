@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
@@ -25,12 +26,23 @@ type User struct {
 
 // Get All Posts
 func getPosts(w http.ResponseWriter, r *http.Request) {
-
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(posts)
 }
 
 // Get Single Post
 func getPost(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	params := mux.Vars(r) // Get params
+	// Find id
 
+	for _, item := range posts {
+		if item.ID == params["id"] {
+			json.NewEncoder(w).Encode(item)
+			return
+		}
+	}
+	json.NewEncoder(w).Encode(&Post{})
 }
 
 // Create a New Post

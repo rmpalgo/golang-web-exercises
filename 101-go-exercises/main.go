@@ -103,6 +103,24 @@ func main() {
 	// Exercise 15
 	// Write a function definition named isEven that takes in a number and returns true or false if that number is even.
 	fmt.Println(isEven(1))
+
+	// Exercise 16
+	// Write a function definition named identity that takes in any input and returns that input.
+	fmt.Println(identity(params{foo: "hello"}))
+	fmt.Println(identity(params{goal: true}))
+
+}
+
+type params struct {
+	foo string
+	bar int
+	baz float32
+	goal bool
+}
+
+//Ex 16 function
+func identity(params params) params {
+	return params
 }
 
 func isEven(num int) bool {

@@ -90,7 +90,7 @@ func main() {
 
 	// Exercise 12
 	// Write a function definition named isPositive that takes in a number and returns true or false if that number is positive.
-	fmt.Println(isPostive(-1))
+	fmt.Println(isPositive(-1))
 
 	// Exercise 13
 	// Write a function definition named isNegative that takes in a number and returns true or False if that number is negative.
@@ -109,6 +109,20 @@ func main() {
 	fmt.Println(identity(params{foo: "hello"}))
 	fmt.Println(identity(params{goal: true}))
 
+	//Exercise 17  Write a function definition named isPositiveOdd that takes in a number and returns true or false if the value is both greater than zero and odd
+	fmt.Println(isPositiveOdd(21))
+
+	//Exercise 18 Write a function definition named isPositiveEven that takes in a number and returns true or false if the value is both greater than zero and even
+	fmt.Println(isPositiveEven(32))
+
+	// Exercise 19 Write a function definition named isNegativeOdd that takes in a number and returns true or false if the value is both less than zero and odd.
+	fmt.Println(isNegativeOdd(-33))
+
+	// Exercise 20
+	// Write a function definition named isNegativeEven that takes in a number and returns true or false if the value is both less than zero and even.
+	fmt.Println(isNegativeEven(-12))
+
+
 }
 
 type params struct {
@@ -123,6 +137,25 @@ func identity(params params) params {
 	return params
 }
 
+//Ex 17 func
+func isPositiveOdd(num int) bool {
+	return (num % 2 != 0) && (num > 0)
+}
+
+//ex 18
+func isPositiveEven (num int) bool {
+	return (num % 2 == 0) && ( num > 0 )
+}
+//ex 19
+func isNegativeOdd (num int) bool {
+	return (num % 2 != 0) && (num < 0)
+}
+
+//ex 20
+func isNegativeEven (num int) bool {
+	return (num % 2 == 0) && (num < 0)
+}
+
 func isEven(num int) bool {
 	return num % 2 == 0
 }
@@ -135,7 +168,7 @@ func isNegative(num int) bool {
 	return num < 0
 }
 
-func isPostive(num int) bool {
+func isPositive(num int) bool {
 	return num > 0
 }
 

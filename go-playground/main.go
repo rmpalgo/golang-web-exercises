@@ -58,6 +58,17 @@ func main() {
 	fmt.Println(c << 3) // 2^3 * 2^3 = 2^6
 	fmt.Println(c >> 3) // 2^3 / 2^3 = 2 ^ 0 or 1
 
+	//complex numbers in Go as primitive types!!!
+	var n complex64 = 2i
+	fmt.Printf("%v, %T\n", n, n)
 
+	//strings aliases for bytes
+	s := "this is a string"
+	fmt.Printf("%v, %T\n", s, s)
+	fmt.Printf("%v, %T\n", string(s[1]) + string(s[5]), s[1] + s[5])
+
+	//rune
+	var r rune = 'a'
+	fmt.Printf("%v, %T\n", r, r)
 
 }

@@ -2,73 +2,35 @@ package main
 
 import "fmt"
 
-//Package visibility
-//scope visibility
-//Global visibility with capital Letter
-var Global int = 32
+//infer the pattern
+const (
+	a = iota
+	b
+	c
+	)
 
-//refresher exercise
+const (
+	a2 = iota
+)
+
+const (
+	errorSpecialist = iota
+	catSpecialist
+	dogSpecialist
+	snakeSpecialist
+)
 func main() {
+	//const a = 42
+	//var b int16 = 27
+	//fmt.Printf("%v, %T\n", a + b, a + b)
 
-	//var myFavoriteNumber int
-	//myFavoriteNumber = 4
-	//fmt.Println(myFavoriteNumber)
-	//
-	//var myString string = "hello"
-	//fmt.Println(myString)
-	//
-	//var myNumber float32
-	//myNumber = 3.14
-	//fmt.Println(myNumber)
-	//
-	//var x int = 5
-	//x++
-	//fmt.Println(x)
-	//
-	//var num int
-	//num = 32
-	//fmt.Printf("%v, %T\n", num, num)
-	//
-	//var numFloat float32
-	//numFloat = float32(x)
-	//fmt.Printf("%v, %T\n", numFloat, numFloat)
-	//
-	//var t int = 4
-	//fmt.Printf("%v, %T\n", t, t)
-	//
-	//var tString string
-	//tString = strconv.Itoa(t)
-	//fmt.Printf("%v, %T\n", tString, tString)
-	//
-	////boolean
-	//n := 1 == 1
-	//m := 1 == 2
-	//fmt.Printf("%v, %T\n", n, n)
-	//fmt.Printf("%v, %T\n", m, m)
+	fmt.Printf("%v\n", a)
+	fmt.Printf("%v\n", b)
+	fmt.Printf("%v\n", c)
+	fmt.Printf("%v\n", a2)
 
-	a := 10 // 1010
-	b := 3 // 0011
-
-	fmt.Println(a & b) // 0010 & (bitwise AND): Takes two numbers as operands and does AND on every bit of two numbers. The result of AND is 1 only if both bits are 1.
-	fmt.Println(a | b) // 1011 Takes two numbers as operands and does OR on every bit of two numbers. The result of OR is 1 any of the two bits is 1.
-	fmt.Println(a ^ b) // 1001 Takes two numbers as operands and does XOR on every bit of two numbers. The result of XOR is 1 if the two bits are different.
-	fmt.Println(a &^ b) // 0100 This is a bit clear operator.
-
-	c := 8
-	fmt.Println(c << 3) // 2^3 * 2^3 = 2^6
-	fmt.Println(c >> 3) // 2^3 / 2^3 = 2 ^ 0 or 1
-
-	//complex numbers in Go as primitive types!!!
-	var n complex64 = 2i
-	fmt.Printf("%v, %T\n", n, n)
-
-	//strings aliases for bytes
-	s := "this is a string"
-	fmt.Printf("%v, %T\n", s, s)
-	fmt.Printf("%v, %T\n", string(s[1]) + string(s[5]), s[1] + s[5])
-
-	//rune
-	var r rune = 'a'
-	fmt.Printf("%v, %T\n", r, r)
+	var specialistType int
+	fmt.Println(specialistType)
+	fmt.Printf("%v\n", specialistType == catSpecialist)
 
 }

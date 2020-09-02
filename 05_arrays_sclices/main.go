@@ -1,29 +1,31 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	//Arrays
 
-	//var fruitArr [2]string
+	grades := [...]int{97, 85, 93, 94}
+	var students [3]string
+	fmt.Printf("Grades: %v\n", grades)
+	students[0] = "Milo"
+	students[1] = "Mia"
+	students[2] = "Lucy"
+	fmt.Printf("Grades: %v\n", students)
+	fmt.Printf("Grades size: %v\n", len(students))
 
-	//assign the values
-	//fruitArr[0] = "Apple"
-	//fruitArr[1] = "Orange"
-	//
-	//Declare and assign
+	var identityMatrix [3][3]int = [3][3]int{ [3]int{1, 0, 0}, [3]int{0, 1, 0}, [3]int{0, 0, 1}}
+	fmt.Println(identityMatrix)
 
-	//fruitArr := [2]string{"Apple", "Orange"}
-	//
-	//
-	//fmt.Println(fruitArr)
-	//fmt.Println(fruitArr[0])
+	//arrays are values, reassigning leads to a copy of the array, imagine hundreds of thousands element being copied
+	a := [...]int{1, 2, 3}
+	b := a
+	b[1] = 5
+	fmt.Println(a)
+	fmt.Println(b)
 
-	fruitSlice:= []string{"Apple", "Orange", "Grape", "Cherry"}
-
-	fmt.Println(len(fruitSlice))
-	fmt.Println(fruitSlice[1:3])
-
+	// using & as pointers will point to the same data as a has
+	c := &a
+	c[1] = 0
+	fmt.Println(a)
+	fmt.Println(c)
 }

@@ -34,4 +34,12 @@ func main() {
 		},
 	}
 fmt.Println(aDoctor.Companions[1])
+
+	//anonymous struct
+aDoc := struct{name string}{name: "John Pertwee"}
+anotherDoc := aDoc
+anotherDoc.name = "Tom Baker"
+fmt.Println(aDoc)
+fmt.Println(anotherDoc)
+
 }

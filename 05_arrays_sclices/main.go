@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-
+/*
 	grades := [...]int{97, 85, 93, 94}
 	var students [3]string
 	fmt.Printf("Grades: %v\n", grades)
@@ -28,4 +28,66 @@ func main() {
 	c[1] = 0
 	fmt.Println(a)
 	fmt.Println(c)
+ */
+
+	/*
+	//slice review
+	a := []int{1, 2, 3}
+	b := a
+	b[1] = 5
+	fmt.Println(a)
+	fmt.Println(b)
+	fmt.Printf("Lenght: %v\n", len(a))
+	fmt.Printf("Capacity: %v\n", cap(a))
+	 */
+
+	/*
+	a := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	b := a[:] //slice of all elements
+	b[0] = 0
+	c := a[3:] //slice from 4th element to the end
+	d := a[:6] //slice first 6 elements
+	e := a[3:6] //slice the 4th, 5th, and 6th elements
+	fmt.Println(a)
+	fmt.Println(b)
+	fmt.Println(a)
+	fmt.Println(c)
+	fmt.Println(d)
+	fmt.Println(e)
+	 */
+
+	/*
+	a := make([]int, 3, 100)
+	fmt.Println(a)
+	fmt.Printf("Lenght: %v\n", len(a))
+	fmt.Printf("Capacity: %v\n", cap(a))
+	 */
+
+	/*
+	b := []int{2, 3,4, 5}
+	a := []int{}
+	fmt.Println(a)
+	fmt.Printf("Lenght: %v\n", len(a))
+	fmt.Printf("Capacity: %v\n", cap(a))
+	a = append(a, 1)
+	fmt.Println(a)
+	fmt.Printf("Lenght: %v\n", len(a))
+	fmt.Printf("Capacity: %v\n", cap(a))
+	a = append(a, b...)
+	fmt.Println(a)
+	fmt.Printf("Lenght: %v\n", len(a))
+	fmt.Printf("Capacity: %v\n", cap(a))
+	 */
+
+	//shift, pop
+	a := []int{1, 2, 3, 4, 5, 6}
+	b := a[1:] //shift
+	c := a[:len(a) - 1] //pop
+	d := append(a[:2], a[3:]...)
+	fmt.Println(b)
+	fmt.Println(c)
+	fmt.Println(d)
+	fmt.Println(a)
+
+
 }
